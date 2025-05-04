@@ -1,5 +1,4 @@
 require('dotenv').config();
-
 const fs = require('fs');
 const path = require('path');
 const { Client, GatewayIntentBits, Routes, SlashCommandBuilder } = require('discord.js');
@@ -8,6 +7,9 @@ const { REST } = require('@discordjs/rest');
 // Replace with your own Discord bot token and client ID (application ID) and optionally guild ID for testing
 const TOKEN = process.env.TOKEN;
 const CLIENT_ID = process.env.CLIENT_ID;
+// For testing, you can specify a GUILD_ID to register commands only in one server (faster update)
+// Otherwise leave empty or null to register globally (may take up to 1 hour to update)
+const GUILD_ID = ''; // e.g. '123456789012345678'
 
 const QUESTIONS_FILE = path.join(__dirname, 'questions.json');
 
